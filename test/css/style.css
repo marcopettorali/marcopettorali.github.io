@@ -15,7 +15,7 @@ h3 {
 }
 
 #research-interests{
-    outline: none;
+    border: none;
 }
 
 .card-header{
@@ -49,11 +49,19 @@ a {
 }
 
 a:hover {
-    font-weight: bold;
+    /* font-weight: ; */
     text-decoration: none;
 }
 
 #photo-bio-box{
     margin-top: 100px;
 
+}
+
+.nav-link{
+    font-size: 16px;
+}
+
+.nav-link:hover{
+    font-weight: normal;
 }
