@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Your Name - Researcher</title>
+    <title>Marco Pettorali</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -14,7 +14,7 @@
     <link rel="icon" href="img/logo_dii_light_cropped.png" type="image/x-icon">
 
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article,cloud_sync,corporate_fare,experiment,globe,home_iot_device,hub,person,sensors,tactic" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article,cloud_sync,computer,contacts,corporate_fare,experiment,globe,home_iot_device,hub,person,sensors,tactic" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
@@ -69,7 +69,9 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+
         }
+
 
         h1,
         h2,
@@ -129,11 +131,15 @@
         #service li {
             margin-bottom: 10pt;
         }
+
+        #research-interests p {
+            font-size: normal;
+        }
     </style>
 </head>
 
 <body onload="main();set_map()">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark sticky-top bg-body">
         <div class="container-fluid d-flex align-items-center">
             <!-- Brand logo and text -->
             <div class="navbar-brand">
@@ -160,24 +166,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="publications.html">Publications</a>
+                        <a class="nav-link" aria-current="page" href="#publications">Publications</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="projects.html">Projects</a>
+                        <a class="nav-link" aria-current="page" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="service.html">Service</a>
+                        <a class="nav-link" aria-current="page" href="#service">Service</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="contacts.html">Contacts</a>
+                        <a class="nav-link" aria-current="page" href="#contacts">Contacts</a>
                     </li>
                 </ul>
             </div>
         </div>
-        `
+
     </nav>
 
     <header class="hero">
@@ -201,16 +207,15 @@
         <div class="row justify-content-center">
             <div id="aboutme" class="card col-10 col-sm-10 col-md-5 col-lg-4 m-3 p-3">
 
-                <!-- Title & Icon Side by Side on Small Screens -->
-                <div class="d-flex align-items-center justify-content-center d-md-none mb-3">
+                <div class="d-flex align-items-center justify-content-center d-xl-none ">
                     <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">person</span>
-                    <h3 class="m-0">About me</h3>
+                    <h2 class="m-0">About Me</h2>
                 </div>
-                <!-- Icon & Title for Larger Screens -->
-                <div class="d-none d-md-flex flex-column align-items-center justify-content-center mb-3">
-                    <span class="material-symbols-outlined" style="font-size: 3rem;">person</span>
-                    <h3 class="text-center mt-2">About me</h3>
+                <div class="d-none d-xl-flex flex-column align-items-center justify-content-center ">
+                    <span class="material-symbols-outlined" style="font-size: 6rem;">person</span>
+                    <h2 class="text-center mt-2 mb-0">About Me</h2>
                 </div>
+                <hr>
 
                 <div class="text-center text-sm-start">
                     <p><b>Marco Pettorali</b> received the master’s degree <i>(cum laude)</i> in computer
@@ -226,16 +231,15 @@
 
             </div>
             <div id="research-interests" class="card col-10 col-sm-10 col-md-5 col-lg-4 m-3 p-3">
-                <!-- Title & Icon Side by Side on Small Screens -->
-                <div class="d-flex align-items-center justify-content-center d-md-none mb-3">
-                    <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">experiment</span>
-                    <h3 class="m-0">Research Interests</h3>
+                <div class="d-flex align-items-center justify-content-center d-xl-none ">
+                    <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">computer</span>
+                    <h2 class="m-0">Research Interests</h2>
                 </div>
-                <!-- Icon & Title for Larger Screens -->
-                <div class="d-none d-md-flex flex-column align-items-center justify-content-center mb-3">
-                    <span class="material-symbols-outlined" style="font-size: 3rem;">experiment</span>
-                    <h3 class="text-center mt-2">Research Interests</h3>
+                <div class="d-none d-xl-flex flex-column align-items-center justify-content-center ">
+                    <span class="material-symbols-outlined" style="font-size: 6rem;">computer</span>
+                    <h2 class="text-center mt-2 mb-0">Research Interests</h2>
                 </div>
+                <hr>
 
                 <div class="d-flex flex-column align-items-start ms-md-4">
 
@@ -263,18 +267,20 @@
                 </div>
             </div>
 
-            <div id="international-collaborations" class="card col-12 col-sm-10 col-md-10 col-lg-8 m-3 p-3">
+            <div id="international-collaborations" class="card col-10 col-sm-10 col-md-10 col-lg-8 m-3 p-3">
                 <!-- Title & Icon Side by Side on Small Screens -->
-                <div class="d-flex align-items-center justify-content-center d-xl-none mb-3">
+                <div class="d-flex align-items-center justify-content-center d-xl-none">
                     <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">globe</span>
                     <h2 class="m-0">International Collaborations</h2>
+
                 </div>
+                <hr class="d-xl-none">
 
                 <div class="d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch">
                     <!-- Left Section: Icon and Title for Larger Screens -->
                     <div
                         class="d-none d-xl-flex flex-column align-items-center justify-content-center me-xl-6 col-xl-6">
-                        <span class="material-symbols-outlined" style="font-size: 4rem;">globe</span>
+                        <span class="material-symbols-outlined" style="font-size: 6rem;">globe</span>
                         <h2 class="text-center mt-2">International Collaborations</h2>
                     </div>
 
@@ -304,20 +310,22 @@
                     </div>
                 </div>
             </div>
-
-
-
-
         </div>
 
     </section>
 
     <section>
-        <div id="publications" class="container-fluid mt-5 col-sm-12 col-md-10 col-lg-8 col-xl-8">
-            <h2 class="d-flex align-items-center justify-content-center">
-                <span class="material-symbols-outlined me-2">article</span>
-                Publications
-            </h2>
+        <div id="publications" class="card p-3 container-fluid mt-5 col-sm-10 col-md-10 col-lg-8 col-xl-8">
+
+            <div class="d-flex align-items-center justify-content-center d-xl-none ">
+                <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">article</span>
+                <h2 class="m-0">Publications</h2>
+            </div>
+            <div class="d-none d-xl-flex flex-column align-items-center justify-content-center ">
+                <span class="material-symbols-outlined" style="font-size: 6rem;">article</span>
+                <h2 class="text-center mt-2 mb-0">Publications</h2>
+            </div>
+            <hr>
 
             <h3>Journals</h3>
             <ul>
@@ -357,11 +365,16 @@
     </section>
 
     <section>
-        <div id="projects" class="container-fluid mt-5 col-sm-12 col-md-10 col-lg-8 col-xl-8">
-            <h2 class="d-flex align-items-center justify-content-center">
-                <span class="material-symbols-outlined me-2">tactic</span>
-                Projects
-            </h2>
+        <div id="projects" class="card p-3 container-fluid mt-5 col-sm-10 col-md-10 col-lg-8 col-xl-8">
+            <div class="d-flex align-items-center justify-content-center d-xl-none ">
+                <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">tactic</span>
+                <h2 class="m-0">Projects</h2>
+            </div>
+            <div class="d-none d-xl-flex flex-column align-items-center justify-content-center ">
+                <span class="material-symbols-outlined" style="font-size: 6rem;">tactic</span>
+                <h2 class="text-center mt-2 mb-0">Projects</h2>
+            </div>
+            <hr>
 
             <ul>
 
@@ -384,11 +397,16 @@
     </section>
 
     <section>
-        <div id="service" class="container-fluid mt-5 col-sm-12 col-md-10 col-lg-8 col-xl-8">
-            <h2 class="d-flex align-items-center justify-content-center">
-                <span class="material-symbols-outlined me-2">corporate_fare</span>
-                Service
-            </h2>
+        <div id="service" class="card p-3 container-fluid mt-5 col-sm-10 col-md-10 col-lg-8 col-xl-8">
+            <div class="d-flex align-items-center justify-content-center d-xl-none ">
+                <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">corporate_fare</span>
+                <h2 class="m-0">Service</h2>
+            </div>
+            <div class="d-none d-xl-flex flex-column align-items-center justify-content-center ">
+                <span class="material-symbols-outlined" style="font-size: 6rem;">corporate_fare</span>
+                <h2 class="text-center mt-2 mb-0">Service</h2>
+            </div>
+            <hr>
             <h3 class="">Organizing committee member</h3>
             <ul>
                 <li><b>2024 - Publicity Co-Chair</b>, <a href="https://wowmomconference2025.uta.edu/">26th IEEE
@@ -432,8 +450,34 @@
 
 
     <section>
-        <div id="contacts" class="card p-3 container-fluid mt-5 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xl-4">
-            <h1 class="text-center mb-4">Contacts</h1>
+        <!-- <div id="contacts" class="card p-3 container-fluid mt-5 col-sm-10 col-md-10 col-lg-8 col-xl-8">
+
+            <div class="d-flex align-items-center justify-content-center d-xl-none ">
+                <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">contacts</span>
+                <h2 class="m-0">Contacts</h2>
+            </div>
+            <div class="d-none d-xl-flex flex-column align-items-center justify-content-center ">
+                <span class="material-symbols-outlined" style="font-size: 6rem;">contacts</span>
+                <h2 class="text-center mt-2 mb-0">Contacts</h2>
+            </div>
+            <hr>
+
+            <div class="text-center">
+                <a href="mailto:marco.pettorali@ing.unipi.it" class="social-link">
+                    <i class="fa fa-envelope contact-icon" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://scholar.google.com/citations?user=F3pN-DQAAAAJ&hl=it" class="social-link">
+                    <i class="fa fa-graduation-cap contact-icon" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://github.com/marcopettorali" class="social-link"><i
+                        class="fa-brands fa-github contact-icon" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/marco-pettorali-9bb78a228" class="social-link"><i
+                        class="fa-brands fa-linkedin contact-icon" aria-hidden="true"></i></a>
+                <br><br>
+            </div>
+
             <p><b>E-mail:</b> marco.pettorali@ing.unipi.it</p>
             <p><b>Office:</b> Department of Information Engineering, Room: 4-123<br>Largo Lucio Lazzarino 1, 56122, Pisa
             </p>
@@ -443,27 +487,67 @@
             <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet" />
             <div class="mb-4" id="osm-map"></div>
 
-        </div>
-        <div class="text-center">
-            <a href="mailto:marco.pettorali@ing.unipi.it" class="social-link">
-                <i class="fa fa-envelope contact-icon" aria-hidden="true"></i>
-            </a>
+        </div> -->
 
-            <a href="https://scholar.google.com/citations?user=F3pN-DQAAAAJ&hl=it" class="social-link">
-                <i class="fa fa-graduation-cap contact-icon" aria-hidden="true"></i>
-            </a>
 
-            <a href="https://github.com/marcopettorali" class="social-link"><i class="fa-brands fa-github contact-icon"
-                    aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/in/marco-pettorali-9bb78a228" class="social-link"><i
-                    class="fa-brands fa-linkedin contact-icon" aria-hidden="true"></i></a>
-            <br><br>
+        <div id="contacts" class="card p-3 container-fluid mt-5 col-sm-10 col-md-10 col-lg-8 col-xl-8">
+            <!-- Title & Icon Side by Side on Small Screens -->
+            <div class="d-flex align-items-center justify-content-center d-xl-none">
+                <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">contacts</span>
+                <h2 class="m-0">Contacts</h2>
+
+            </div>
+            <hr class="d-xl-none">
+
+            <div class="d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch">
+                <!-- Left Section: Icon and Title for Larger Screens -->
+                <div class="d-none d-xl-flex flex-column align-items-center justify-content-center me-xl-6 col-xl-6">
+                    <span class="material-symbols-outlined" style="font-size: 6rem;">contacts</span>
+                    <h2 class="text-center mt-2">Contacts</h2>
+                </div>
+
+                <!-- Vertical Line (Spans Full Height) -->
+                <div class="d-none d-xl-block border-end border-2 mx-3" style="height: auto;"></div>
+
+                <!-- Right Section: Content -->
+                <div class="flex-grow-1 ms-xl-4">
+
+                    <div class="text-center">
+                        <a href="mailto:marco.pettorali@ing.unipi.it" class="social-link">
+                            <i class="fa fa-envelope contact-icon" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://scholar.google.com/citations?user=F3pN-DQAAAAJ&hl=it" class="social-link">
+                            <i class="fa fa-graduation-cap contact-icon" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://github.com/marcopettorali" class="social-link"><i
+                                class="fa-brands fa-github contact-icon" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/marco-pettorali-9bb78a228" class="social-link"><i
+                                class="fa-brands fa-linkedin contact-icon" aria-hidden="true"></i></a>
+                        <br><br>
+                    </div>
+
+                    <p><b>E-mail:</b> marco.pettorali@ing.unipi.it</p>
+                    <p><b>Office:</b> Department of Information Engineering, Room: 4-123<br>Largo Lucio Lazzarino 1,
+                        56122, Pisa
+                    </p>
+                    <p><b>Phone:</b> (+39) 050-2217456</p>
+
+                    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+                    <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet" />
+                    <div class="mb-4" id="osm-map"></div>
+
+                    </ul>
+                </div>
+            </div>
         </div>
+
     </section>
 
 
     <footer class="bg-dark text-white text-center p-3">
-        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+        <p>&copy; 2025 Marco Pettorali. All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
