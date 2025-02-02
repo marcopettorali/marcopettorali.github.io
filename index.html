@@ -14,7 +14,7 @@
     <link rel="icon" href="img/logo_dii_light_cropped.png" type="image/x-icon">
 
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article,cloud_sync,corporate_fare,globe,home_iot_device,hub,sensors,tactic" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article,cloud_sync,corporate_fare,experiment,globe,home_iot_device,hub,person,sensors,tactic" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
@@ -28,12 +28,43 @@
         updateTheme();
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
 
-        // according to the system theme, change the logo
-        $('#logo_unipi').attr('src', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'img/logo_unipi_dark.png' : 'img/logo_unipi_light.png'))
-        $('#logo_dii').attr('src', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'img/logo_dii_dark.png' : 'img/logo_dii_light.png'))
 
-        // adjust the favicon
-        $('link[rel="icon"]').attr('href', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'img/logo_dii_dark_cropped.png' : 'img/logo_dii_light_cropped.png'))
+
+        function main() {
+
+            // according to the system theme, change the logo
+            $('#logo_unipi').attr('src', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'img/logo_unipi_dark.png' : 'img/logo_unipi_light.png'))
+            $('#logo_dii').attr('src', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'img/logo_dii_dark.png' : 'img/logo_dii_light.png'))
+
+            // adjust the favicon
+            $('link[rel="icon"]').attr('href', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'img/logo_dii_dark_cropped.png' : 'img/logo_dii_light_cropped.png'))
+        }
+
+        function set_map() {
+            // Where you want to render the map.
+            var element = document.getElementById('osm-map');
+
+            // Height has to be set. You can do this in CSS too.
+            element.style = 'height:300px;';
+
+            // Create Leaflet map on map element.
+            var map = L.map(element);
+
+            // Add OSM tile layer to the Leaflet map.
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Target's GPS coordinates.
+            var target = L.latLng('43.720746', '10.389542');
+
+            // Set map's center to target with zoom 14.
+            map.setView(target, 17);
+
+            // Place a marker on the same location.
+            L.marker(target).addTo(map);
+        }
+
     </script>
     <style>
         body {
@@ -42,17 +73,14 @@
 
         h1,
         h2,
-        h3,
-        h4,
-        h5 {
+        h3 {
             font-family: 'Lexend', sans-serif;
-            font-weight: bold;
-
         }
 
         h1,
         h2 {
             margin-bottom: 20pt;
+            font-weight: bold;
         }
 
         h3,
@@ -96,13 +124,15 @@
             text-decoration: none;
         }
 
-        #publications li, #projects li, #service li {
+        #publications li,
+        #projects li,
+        #service li {
             margin-bottom: 10pt;
         }
     </style>
 </head>
 
-<body>
+<body onload="main();set_map()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid d-flex align-items-center">
             <!-- Brand logo and text -->
@@ -169,9 +199,19 @@
     <section id="about" class="section">
 
         <div class="row justify-content-center">
-            <div id="aboutme" class="card col-12 col-sm-10 col-md-5 m-3 p-3">
+            <div id="aboutme" class="card col-10 col-sm-10 col-md-5 col-lg-4 m-3 p-3">
 
-                <h3 class="text-center">About me</h3>
+                <!-- Title & Icon Side by Side on Small Screens -->
+                <div class="d-flex align-items-center justify-content-center d-md-none mb-3">
+                    <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">person</span>
+                    <h3 class="m-0">About me</h3>
+                </div>
+                <!-- Icon & Title for Larger Screens -->
+                <div class="d-none d-md-flex flex-column align-items-center justify-content-center mb-3">
+                    <span class="material-symbols-outlined" style="font-size: 3rem;">person</span>
+                    <h3 class="text-center mt-2">About me</h3>
+                </div>
+
                 <div class="text-center text-sm-start">
                     <p><b>Marco Pettorali</b> received the master’s degree <i>(cum laude)</i> in computer
                         engineering from
@@ -185,68 +225,90 @@
                 </div>
 
             </div>
-            <div id="research-interests" class="card col-12 col-sm-10 col-md-5 m-3 p-3">
+            <div id="research-interests" class="card col-10 col-sm-10 col-md-5 col-lg-4 m-3 p-3">
+                <!-- Title & Icon Side by Side on Small Screens -->
+                <div class="d-flex align-items-center justify-content-center d-md-none mb-3">
+                    <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">experiment</span>
+                    <h3 class="m-0">Research Interests</h3>
+                </div>
+                <!-- Icon & Title for Larger Screens -->
+                <div class="d-none d-md-flex flex-column align-items-center justify-content-center mb-3">
+                    <span class="material-symbols-outlined" style="font-size: 3rem;">experiment</span>
+                    <h3 class="text-center mt-2">Research Interests</h3>
+                </div>
 
-                <h3 class="text-center">Research interests</h3>
+                <div class="d-flex flex-column align-items-start ms-md-4">
 
 
-                <p class="d-flex align-items-center justify-content-center">
-                    <span style="color:#ff8a80" class="material-symbols-outlined me-2">hub</span> Wireless Sensor
-                    Networks (WSNs)
-                </p>
+                    <!-- Research Interests List -->
+                    <p class="d-flex align-items-center">
+                        <span style="color:#ff8a80" class="material-symbols-outlined me-2">hub</span>
+                        Wireless Sensor Networks (WSNs)
+                    </p>
 
-                <p class="d-flex align-items-center justify-content-center">
-                    <span style="color:#fff176" class="material-symbols-outlined me-2">home_iot_device</span>
-                    Internet of Things (IoT)
-                </p>
+                    <p class="d-flex align-items-center">
+                        <span style="color:#fff176" class="material-symbols-outlined me-2">home_iot_device</span>
+                        Internet of Things (IoT)
+                    </p>
 
-                <p class="d-flex align-items-center justify-content-center">
-                    <span style="color:#9fa8da" class="material-symbols-outlined me-2">sensors</span> Industrial
-                    Internet of Things
-                    (IIoT)
-                </p>
+                    <p class="d-flex align-items-center">
+                        <span style="color:#9fa8da" class="material-symbols-outlined me-2">sensors</span>
+                        Industrial Internet of Things (IIoT)
+                    </p>
 
-                <p class="d-flex align-items-center justify-content-center">
-                    <span style="color:#a5d6a7" class="material-symbols-outlined me-2">cloud_sync</span>
-                    Cloud-to-Things Continuum
-                    (C2TC)
-
-                </p>
-
+                    <p class="d-flex align-items-center">
+                        <span style="color:#a5d6a7" class="material-symbols-outlined me-2">cloud_sync</span>
+                        Cloud-to-Things Continuum (C2TC)
+                    </p>
+                </div>
             </div>
 
+            <div id="international-collaborations" class="card col-12 col-sm-10 col-md-10 col-lg-8 m-3 p-3">
+                <!-- Title & Icon Side by Side on Small Screens -->
+                <div class="d-flex align-items-center justify-content-center d-xl-none mb-3">
+                    <span class="material-symbols-outlined me-2" style="font-size: 2.5rem;">globe</span>
+                    <h2 class="m-0">International Collaborations</h2>
+                </div>
+
+                <div class="d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch">
+                    <!-- Left Section: Icon and Title for Larger Screens -->
+                    <div
+                        class="d-none d-xl-flex flex-column align-items-center justify-content-center me-xl-6 col-xl-6">
+                        <span class="material-symbols-outlined" style="font-size: 4rem;">globe</span>
+                        <h2 class="text-center mt-2">International Collaborations</h2>
+                    </div>
+
+                    <!-- Vertical Line (Spans Full Height) -->
+                    <div class="d-none d-xl-block border-end border-2 mx-3" style="height: auto;"></div>
+
+                    <!-- Right Section: Content -->
+                    <div class="flex-grow-1 ms-xl-4">
+
+                        <h5>2021 - Present, Dr. Sajal K. Das</h5>
+                        Computer Science Department, Missouri University of Science and Technology (MS&T)<br>
+                        Rolla, Missouri, USA 🇺🇸
+                        <br><br>
+                        <h5>2024 - Present, Dr. Marco Tiloca</h5>
+                        RISE Research Institutes of Sweden<br>
+                        Kista, Stockholm, Sweden 🇸🇪
+                        <ul>
+                            <li>
+                                <b>Visiting PhD student - Cybersecurity Group, directed by Dr. Shahid Raza</b><br>
+                                Computer Science department, RISE Research Institutes of Sweden, Kista, Stoccolma,
+                                Sweden<br>
+                                May 2024 - July 2024 (3 months)<br>
+                            </li>
+                        </ul>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </div>
-    </section>
-
-    <section id="international-collaborations"
-        class="container-fluid p-3 col-12 col-sm-10 col-md-10 col-lg-8 col-xl-8 ">
-
-        <h2 class="d-flex align-items-center justify-content-center">
-            <span class="material-symbols-outlined me-2">globe</span>
-            International collaborations
-        </h2>
-
-        <ul>
-            <li>
-                <h5>2021 - Present, Dr. Sajal K. Das</h5>
-                Computer Science Department, Missouri University of Science and
-                Technology (MS&T)<br>
-                Rolla, Missouri, USA 🇺🇸
-            </li>
-            <br>
-            <li>
-                <h5>2024 - Present, Dr. Marco Tiloca</h5>
-                RISE Research Institutes of Sweden<br>
-                Kista, Stockholm, Sweden
-                🇸🇪
-                <ul>
-                    <li><b>Visiting PhD student - Cybersecurity Group, directed by Dr. Shahid Raza</b><br>
-                        Computer Science department, RISE Research Institutes of Sweden, Kista, Stoccolma, Sweden<br>
-                        May 2024 - July 2024 (3 months)<br>
-                    </li>
-                </ul>
-            </li>
-        </ul>
 
     </section>
 
@@ -320,7 +382,7 @@
 
         </div>
     </section>
-    <hr>
+
     <section>
         <div id="service" class="container-fluid mt-5 col-sm-12 col-md-10 col-lg-8 col-xl-8">
             <h2 class="d-flex align-items-center justify-content-center">
@@ -332,11 +394,13 @@
                 <li><b>2024 - Publicity Co-Chair</b>, <a href="https://wowmomconference2025.uta.edu/">26th IEEE
                         International Symposium on a World of Wireless, Mobile and
                         Multimedia Networks (WoWMoM), May 27-30, 2025, Fort Worth, Texas, USA</a></li>
-                <li><b>2022 - Publicity Co-Chair</b>, <a href="http://smartsys2022.dii.unipi.it/">7th IEEE Workshop on Smart
+                <li><b>2022 - Publicity Co-Chair</b>, <a href="http://smartsys2022.dii.unipi.it/">7th IEEE Workshop on
+                        Smart
                         Service Systems (SmartSys 2022), co-located
-                        with IEEE International Conference on Smart Computing, SMARTCOMP, 20-24 Giu 2022, Aalto University,
+                        with IEEE International Conference on Smart Computing, SMARTCOMP, 20-24 Giu 2022, Aalto
+                        University,
                         Espoo, Finland</a></li>
-    
+
             </ul>
             <br>
             <br>
@@ -348,25 +412,39 @@
                 <li><b>2025</b> - <a href="https://iiwot25.nws.cs.unibo.it/"> 4th IEEE International Workshop on IoT
                         Interoperability and the Web of Things (IIWoT,
                         colocated with IEEE CCNC 2025), 10-13 January 2025 Las Vegas, NV, USA</a></li>
-                <li><b>2024</b> - <a href="https://2024.ieee-iscc.org/"> 29th IEEE Symposium on Computers and Communications
+                <li><b>2024</b> - <a href="https://2024.ieee-iscc.org/"> 29th IEEE Symposium on Computers and
+                        Communications
                         (ISCC), 26-29 Giu 2024, Paris, France.
                     </a></li>
-                <li><b>2024</b> - <a href="https://cloud2things.netsons.org/2024/index.html">4th Workshop on From Cloud to
+                <li><b>2024</b> - <a href="https://cloud2things.netsons.org/2024/index.html">4th Workshop on From Cloud
+                        to
                         Things: harnessing pervasive data in the Computing Continuum
                         (Cloud2Things), March 11-15, 2024, Biarritz, France.</a></li>
                 <li><b>2024</b> - <a href="https://iiwot24.nws.cs.unibo.it/"> 3rd IEEE International Workshop on IoT
                         Interoperability and the Web of Things (IIWoT,
                         colocated with IEEE CCNC 2024), 6-9 January 2024, Las Vegas, NV, USA </a></li>
-    
-    
+
+
             </ul>
         </div>
-    
+
     </section>
 
-    <section id="contact" class="section">
-        <div class="container text-center">
-            <h2>Contact</h2>
+
+    <section>
+        <div id="contacts" class="card p-3 container-fluid mt-5 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xl-4">
+            <h1 class="text-center mb-4">Contacts</h1>
+            <p><b>E-mail:</b> marco.pettorali@ing.unipi.it</p>
+            <p><b>Office:</b> Department of Information Engineering, Room: 4-123<br>Largo Lucio Lazzarino 1, 56122, Pisa
+            </p>
+            <p><b>Phone:</b> (+39) 050-2217456</p>
+
+            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+            <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet" />
+            <div class="mb-4" id="osm-map"></div>
+
+        </div>
+        <div class="text-center">
             <a href="mailto:marco.pettorali@ing.unipi.it" class="social-link">
                 <i class="fa fa-envelope contact-icon" aria-hidden="true"></i>
             </a>
@@ -382,6 +460,7 @@
             <br><br>
         </div>
     </section>
+
 
     <footer class="bg-dark text-white text-center p-3">
         <p>&copy; 2025 Your Name. All Rights Reserved.</p>
