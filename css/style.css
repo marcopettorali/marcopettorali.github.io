@@ -1,39 +1,38 @@
 body {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    padding-top: 50px !important;
-    line-height: 2;
+    font-family: 'Poppins', sans-serif;
+
 }
+
 
 h1,
 h2,
 h3 {
     font-family: 'Lexend', sans-serif;
-    font-weight: bold;
-
 }
 
-#research-interests{
-    outline: none;
-}
-
-.card-header{
-    font-family: 'Lexend', sans-serif;
+h1,
+h2 {
+    margin-bottom: 20pt;
     font-weight: bold;
 }
 
-
-#bar_name {
-    font-family: 'Lexend', sans-serif;
+h3,
+h4 {
+    margin-bottom: 10pt;
 }
 
-ul {
-    list-style-type: square;
+h5 {
+    margin: 0;
 }
 
-li{
-    margin-bottom: 15px;
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/background.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
 }
 
 .social-link {
@@ -41,7 +40,6 @@ li{
     text-decoration: none;
     margin: 0 5px;
     font-size: 20px;
-
 }
 
 a {
@@ -49,11 +47,16 @@ a {
 }
 
 a:hover {
-    font-weight: bold;
+    font-weight: 200;
     text-decoration: none;
 }
 
-#photo-bio-box{
-    margin-top: 100px;
+#publications li,
+#projects li,
+#service li {
+    margin-bottom: 10pt;
+}
 
+#research-interests p {
+    font-size: normal;
 }

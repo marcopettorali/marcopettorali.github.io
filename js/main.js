@@ -1,10 +1,13 @@
-$(function () {
-    var includes = $('[data-include]')
-    $.each(includes, function () {
-        var file = 'views/' + $(this).data('include') + '.html'
-        $(this).load(file)
-    })
-})
+function updateTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+    }
+}
+updateTheme();
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
+
 
 
 function main() {
@@ -36,11 +39,8 @@ function set_map() {
     var target = L.latLng('43.720746', '10.389542');
 
     // Set map's center to target with zoom 14.
-    map.setView(target, 40);
+    map.setView(target, 17);
 
     // Place a marker on the same location.
     L.marker(target).addTo(map);
 }
-
-document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
-
