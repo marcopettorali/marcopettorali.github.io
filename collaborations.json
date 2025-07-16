@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Dr. Sajal K. Das",
+    "institution": "Missouri University of Science and Technology (MS&T)",
+    "department": "Computer Science Department",
+    "location": "Rolla, Missouri, USA 🇺🇸",
+    "period": "2021 - Present",
+    "logo": "/logos/mst.png"
+  },
+  {
+    "name": "Dr. Marco Tiloca",
+    "institution": "RISE Research Institutes of Sweden",
+    "department": "Computer Science Department / Cybersecurity Group, directed by Dr. Shahid Raza",
+    "location": "Kista, Stockholm, Sweden 🇸🇪",
+    "period": "2024 - Present",
+    "note": "Visiting PhD Student (May-July 2024)",
+    "logo": "/logos/rise.png"
+  },
+  {
+    "name": "Member of Smart Cities & Communities Lab",
+    "institution": "Consorzio Nazionale Interuniversitario per l'Informatica (CINI)",
+    "department": "Smart Cities & Communities Lab",
+    "period": "2025 - Present",
+    "logo": "/logos/smartcities.png"
+  }
+]
