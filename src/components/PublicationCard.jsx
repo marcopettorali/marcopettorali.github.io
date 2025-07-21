@@ -29,7 +29,7 @@ export default function PublicationCard({ bibtex, badges = [] }) {
           {title}
         </h4>
         {authors && (
-          <p className="text-sm italic text-gray-600 dark:text-gray-400 truncate">
+          <p className="text-sm italic text-gray-600 dark:text-gray-400 whitespace-normal break-words">
             {authors}
           </p>
         )}

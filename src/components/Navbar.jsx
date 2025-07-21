@@ -1,13 +1,13 @@
 // src/components/Navbar.jsx
-import { Fragment, useEffect, useState, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { Disclosure, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
-  XMarkIcon,
   MoonIcon,
   SunIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { Fragment, useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
   { name: "Home", to: "/" },
@@ -76,6 +76,8 @@ export default function Navbar() {
                     className="h-7 object-contain"
                   />
                 </a>
+                <span className="h-8 w-px bg-gray-300 dark:bg-gray-700 mx-2" aria-hidden="true"></span>
+                <p className="text-xl font-title tracking-tight text-gray-900 dark:text-gray-100">Marco Pettorali</p>
               </div>
 
               {/* Desktop nav */}
@@ -84,11 +86,10 @@ export default function Navbar() {
                   <Link
                     key={item.name}
                     to={item.to}
-                    className={`text-sm font-medium transition ${
-                      location.pathname === item.to
+                    className={`text-sm font-medium transition ${location.pathname === item.to
                         ? "text-vscode underline underline-offset-4"
                         : "text-gray-700 dark:text-gray-300 hover:text-vscode"
-                    }`}
+                      }`}
                   >
                     {item.name}
                   </Link>
@@ -130,11 +131,10 @@ export default function Navbar() {
                       key={item.name}
                       to={item.to}
                       onClick={close}                /* chiusura dopo click */
-                      className={`block px-3 py-2 rounded-md text-sm font-medium transition ${
-                        location.pathname === item.to
+                      className={`block px-3 py-2 rounded-md text-sm font-medium transition ${location.pathname === item.to
                           ? "text-vscode underline underline-offset-4"
                           : "text-gray-700 dark:text-gray-300 hover:text-vscode"
-                      }`}
+                        }`}
                     >
                       {item.name}
                     </Link>
@@ -150,7 +150,7 @@ export default function Navbar() {
                     title="Toggle theme"
                   >
                     {dark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
-                    
+
                   </button>
                 </div>
               )}
