@@ -3,7 +3,7 @@
     "name": "C2TC Framework",
     "logo": "/software/c2tcframework.svg",
     "description": "A simulation framework for Cloud-to-Things Continuum systems with mobility and industrial support.",
-    "category": "Simulator",
+    "category": "Network Tool",
     "language": "Python",
     "github": "https://github.com/marcopettorali/C2TCFramework"
   },
@@ -11,7 +11,7 @@
     "name": "Mobile6TiSCH",
     "logo": "/software/mobile6tisch.svg",
     "description": "Enhanced 6TiSCH simulator for mobile IoT nodes.",
-    "category": "Network Tool",
+    "category": "Simulator",
     "language": "C++",
     "github": "https://github.com/marcopettorali/Mobile6TiSCH"
   }
