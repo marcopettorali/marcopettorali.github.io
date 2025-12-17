@@ -9,3 +9,30 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Stile controlli zoom Leaflet per adattarsi al tema */
+.leaflet-control-zoom a {
+  @apply bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-0 rounded shadow-md flex items-center justify-center;
+  width: 34px !important;
+  height: 34px !important;
+  line-height: unset !important;
+  margin-bottom: 8px !important;
+}
+
+.leaflet-control-zoom a:last-child {
+  margin-bottom: 0 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  @apply bg-gray-100 dark:bg-gray-700 border-0 transition-colors duration-200;
+}
+
+.leaflet-touch .leaflet-bar {
+  border: none;
+}
+
+.leaflet-touch .leaflet-bar a,
+.leaflet-touch .leaflet-bar a:first-child,
+.leaflet-touch .leaflet-bar a:last-child {
+  border-radius: 4px!important;
+}

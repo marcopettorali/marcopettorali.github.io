@@ -4,7 +4,7 @@ import iconUrl from "leaflet/dist/images/marker-icon.png";
 import iconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import iconShadowUrl from "leaflet/dist/images/marker-shadow.png";
 import { useEffect } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaHome } from "react-icons/fa";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { FaEnvelope} from "react-icons/fa";
 
@@ -31,6 +31,25 @@ function ForceMapResize() {
     }, 200); // Ritardo per assicurarsi che il layout sia pronto
   }, [map]);
   return null;
+}
+
+// Pulsante per tornare alla vista iniziale
+function HomeButton({ center, zoom }) {
+  const map = useMap();
+  
+  const handleHomeClick = () => {
+    map.setView(center, zoom);
+  };
+
+  return (
+    <button
+      onClick={handleHomeClick}
+      className="absolute top-4 right-4 z-[1000] bg-white dark:bg-gray-800 p-2 rounded shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+      title="Torna alla vista iniziale"
+    >
+      <FaHome className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+    </button>
+  );
 }
 
 export default function Contacts() {
@@ -74,14 +93,15 @@ export default function Contacts() {
       </div>
 
       {/* Mappa */}
-      <div className="rounded-xl overflow-hidden shadow-md border border-gray-300 dark:border-gray-700">
+      <div className="rounded-xl overflow-hidden shadow-md border border-gray-300 dark:border-gray-700 relative">
         <MapContainer
           center={[43.7209229, 10.3897911]}
           zoom={17}
-          scrollWheelZoom={false}
+          scrollWheelZoom={true}
           style={{ height: "500px", width: "100%" }}
         >
           <ForceMapResize />
+          <HomeButton center={[43.7209229, 10.3897911]} zoom={17} />
           <TileLayer
             attribution='&copy; ...'
             url={
