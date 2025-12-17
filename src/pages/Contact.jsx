@@ -1,10 +1,25 @@
 import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import iconUrl from "leaflet/dist/images/marker-icon.png";
+import iconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
+import iconShadowUrl from "leaflet/dist/images/marker-shadow.png";
 import { useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { FaEnvelope} from "react-icons/fa";
 
 import { useState } from "react";
+
+// Ensure Leaflet marker assets resolve correctly when bundled by Vite
+const defaultIcon = new L.Icon({
+  iconUrl,
+  iconRetinaUrl,
+  shadowUrl: iconShadowUrl,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
 
 // Forza il resize della mappa dopo il mount
@@ -36,14 +51,6 @@ export default function Contacts() {
         I'm currently an Assistant Professor at the University of Pisa.<br />
         Feel free to contact me via email or connect on GitHub/LinkedIn.
       </p>
-
-      {/* <a
-        href="mailto:marco.pettorali@ing.unipi.it"
-        className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded hover:scale-105 transition"
-      >
-        <FaEnvelope />
-        Email
-      </a> */}
 
       {/* Email */}
       <div className="mb-6">
@@ -82,7 +89,7 @@ export default function Contacts() {
             }
           />
 
-          <Marker position={[43.7209229, 10.3897911]}>
+          <Marker position={[43.7209229, 10.3897911]} icon={defaultIcon}>
             <Popup>
               Largo Lucio Lazzarino 1<br />
               Department of Computer Engineering (DII), Pisa
