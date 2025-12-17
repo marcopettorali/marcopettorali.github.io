@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaFilePdf, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGoogleScholar } from "react-icons/fa6";
 import CollaborationCard from "../components/CollaborationCard";
 import GlowWrapper from "../components/GlowWrapper";
-import { FaGoogleScholar } from "react-icons/fa6";
 
 
 export default function Home() {
@@ -39,17 +39,18 @@ export default function Home() {
                                     Marco&nbsp;Pettorali
                                 </h1>
                                 <p className="flex md:hidden mt-1 text-lg font-medium text-gray-600 dark:text-gray-300 mt-4 leading-6 justify-center">
-                                    Postdoc Researcher · University&nbsp;of&nbsp;Pisa
+                                    Assistant Professor · University&nbsp;of&nbsp;Pisa
                                 </p>
                                 <p className="hidden md:flex mt-1 text-lg font-medium text-gray-600 dark:text-gray-300 mt-4 leading-6">
-                                    Postdoc Researcher University&nbsp;of&nbsp;Pisa
+                                    Assistant Professor · University&nbsp;of&nbsp;Pisa
                                 </p>
                             </div>
 
                             {/* Core topics */}
                             <ul className="space-y-1 text-base">
                                 {[
-                                    'Wireless networks',
+                                    'Cloud-to-Things Continuum (C2TC)',
+                                    'Internet of Things (IoT)',
                                     'Simulation systems',
                                     'Open-source software'
                                 ].map((item) => (
@@ -75,12 +76,12 @@ export default function Home() {
                             href="https://scholar.google.com/citations?user=F3pN-DQAAAAJ"
                             target="_blank"
                             className="flex items-center gap-2 bg-vscode text-white px-4 py-2 rounded-full hover:bg-vscode-hover hover:scale-105  transition"
-                            style={{ width: "80px", height: "80px", minWidth: "80px", minHeight: "80px" , "backgroundColor": "#4285F4" }}
+                            style={{ width: "80px", height: "80px", minWidth: "80px", minHeight: "80px", "backgroundColor": "#4285F4" }}
                         >
                             <FaGoogleScholar size={48} />
 
                         </a>
-                        
+
                         <a
                             href="https://it.linkedin.com/in/marco-pettorali-9bb78a228/es?trk=people-guest_people_search-card"
                             target="_blank"
@@ -124,7 +125,8 @@ export default function Home() {
 
                 <h3 className="text-2xl font-title uppercase text-vscode mb-4">About Me</h3>
                 <p className="mb-4 text-gray-600 dark:text-gray-300">
-                    I'm a postdoctoral researcher at the University of Pisa. I work on network simulation,
+                    I'm an assistant professor at the University of Pisa. I work on the Cloud-to-Things Continuum (C2TC), 
+                    resource allocation optimization, network simulation,
                     wireless communication systems, and software tools for experimental analysis. My work
                     focuses on bridging the gap between theoretical models and real-world systems.
                     <br></br><br></br>

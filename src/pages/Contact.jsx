@@ -33,7 +33,7 @@ export default function Contacts() {
       <h2 className="text-3xl font-title uppercase text-vscode mb-6">Contact</h2>
 
       <p className="text-gray-700 dark:text-gray-300 mb-4">
-        I'm currently a Postdoctoral Researcher at the University of Pisa.<br />
+        I'm currently an Assistant Professor at the University of Pisa.<br />
         Feel free to contact me via email or connect on GitHub/LinkedIn.
       </p>
 
