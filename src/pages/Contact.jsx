@@ -49,10 +49,10 @@ export default function Contacts() {
       <div className="mb-6">
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Email:</p>
         <a
-          href="mailto:marco.pettorali@ing.unipi.it"
+          href="mailto:marco.pettorali@unipi.it"
           className="text-vscode hover:text-vscode-hover text-sm"
         >
-          marco.pettorali@ing.unipi.it
+          marco.pettorali@unipi.it
         </a>
       </div>
 
