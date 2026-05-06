@@ -1,43 +1,54 @@
 import { useState } from "react";
+import { Check, Copy } from "lucide-react";
 
-export default function PublicationCard({ bibtex, badges = [] }) {
+const formatField = (value) => {
+  if (Array.isArray(value)) return value.join(", ");
+  return value || "";
+};
+
+export default function PublicationCard({ publication }) {
   const [copied, setCopied] = useState(false);
+  const {
+    title = "",
+    author,
+    authors,
+    journal,
+    booktitle,
+    school,
+    year,
+    bibtex = "",
+    badges = []
+  } = publication;
 
-  /* -------- copia -------- */
   const copy = () => {
+    if (!bibtex) return;
+
     navigator.clipboard.writeText(bibtex);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  /* -------- parse bib -------- */
-  const field = (k) => {
-    const m = bibtex.match(new RegExp(`${k}\\s*=\\s*{([^}]+)}`, "i"));
-    return m ? m[1] : "";
-  };
-  const title   = field(" title");
-  const authors = field("author");
-  const year    = field("year");
-  const venue   = field("journal") || field("booktitle") || field("school");
+  const displayAuthors = formatField(author || authors);
+  const venue = formatField(journal || booktitle || school);
+  const metadata = [venue, year].filter(Boolean).join(" • ");
 
-  /* -------- ui -------- */
   return (
     <div className="border-b border-gray-300 dark:border-gray-700 py-4 flex flex-col sm:flex-row sm:items-center gap-2">
-      {/* testo */}
       <div className="flex-1 min-w-0">
         <h4 className="text-base font-semibold text-gray-900 dark:text-gray-100">
           {title}
         </h4>
-        {authors && (
+        {displayAuthors && (
           <p className="text-sm italic text-gray-600 dark:text-gray-400 whitespace-normal break-words">
-            {authors}
+            {displayAuthors}
           </p>
         )}
-        <p className="text-sm text-gray-500 dark:text-gray-500">
-          {venue} {year && "• " + year}
-        </p>
+        {metadata && (
+          <p className="text-sm text-gray-500 dark:text-gray-500">
+            {metadata}
+          </p>
+        )}
 
-        {/* badge inline */}
         {badges.length > 0 && (
           <div className="flex flex-wrap gap-2 mt-3">
             {badges.map((b, i) => (
@@ -52,13 +63,19 @@ export default function PublicationCard({ bibtex, badges = [] }) {
         )}
       </div>
 
-      {/* bottone */}
       <button
         onClick={copy}
-        className="self-start sm:self-center text-vscode hover:text-vscode-hover text-sm px-3 py-1 border border-vscode rounded transition"
-        title="Copy BibTeX"
+        disabled={!bibtex}
+        className="self-start sm:self-center inline-flex items-center gap-2 text-vscode hover:text-vscode-hover disabled:text-gray-400 text-sm px-3 py-1 border border-vscode disabled:border-gray-300 rounded transition"
+        title={copied ? "BibTeX copied" : "Copy BibTeX"}
+        aria-label={copied ? "BibTeX copied" : "Copy BibTeX"}
       >
-        {copied ? "✅ Copied!" : "📋 BibTeX"}
+        {copied ? (
+          <Check className="h-4 w-4" aria-hidden="true" />
+        ) : (
+          <Copy className="h-4 w-4" aria-hidden="true" />
+        )}
+        <span>{copied ? "Copied" : "BibTeX"}</span>
       </button>
     </div>
   );

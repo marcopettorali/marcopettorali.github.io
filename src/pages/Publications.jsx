@@ -30,9 +30,8 @@ export default function Publications() {
           <div className="divide-y divide-gray-200 dark:divide-gray-700 px-6">
             {entries.map((obj, idx) => (
               <PublicationCard
-                key={idx}
-                bibtex={obj.bibtex}
-                badges={obj.badges}
+                key={obj.doi || obj.title || idx}
+                publication={obj}
               />
             ))}
 
